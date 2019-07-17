@@ -1,0 +1,16 @@
+server:
+  port: 6262
+spring:
+  application:
+    name: kafka-consumer
+  kafka: #配置类为KafkaProperties.class
+    bootstrap-servers: localhost:9092 #Kafka集群地址，多个用英文逗号分隔
+    consumer:
+      client-id: 127.0.0.1
+      group-id: sinobest
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 500
+      concurrency: 2

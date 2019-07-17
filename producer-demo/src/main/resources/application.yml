@@ -1,0 +1,15 @@
+server:
+  port: 7171
+spring:
+  application:
+    name: kafka-producer
+  kafka: #配置类为KafkaProperties.class
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      compression-type: gzip #压缩类型
+    bootstrap-servers: localhost:9092 #Kafka集群地址，多个用英文逗号分隔

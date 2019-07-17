@@ -135,11 +135,13 @@ clientPort=2181
 bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 ```
 #### step4
-启动完Zookeeper，接下来启动一个Kafka Broker实例，首先修改配置指定Zookeeper的地址，
+启动完Zookeeper，接下来启动一个Kafka Broker实例，首先修改配置指定Zookeeper的地址与端口，
 修改`\config\server.properties`:
 ```properties
-############################# Zookeeper #############################
+# Default Port is 9092
+port=9092
 
+############################# Zookeeper #############################
 # Zookeeper connection string (see zookeeper docs for details).
 # This is a comma separated host:port pairs, each corresponding to a zk
 # server. e.g. "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002".

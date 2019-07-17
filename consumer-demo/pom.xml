@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>producer-demo</artifactId>
+    <artifactId>consumer-demo</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -27,7 +27,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>yan.study.ProducerApplicationMain</mainClass>
+                    <mainClass>yan.study.ConsumerApplicationMain</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -39,4 +39,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
