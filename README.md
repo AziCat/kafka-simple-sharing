@@ -165,3 +165,28 @@ bin\windows\kafka-server-start.bat config\server.properties
 两个demo来演示一下**Producer API**与**Consumer API**：
 * producer-demo
 * consumer-demo
+
+## FAQ
+* 数据丢失
+
+可以把**kafka.producer.acks**设置为`all`，
+设置**kafka.producer.retries**重发次数，
+设置**kafka.producer.compression-type=gzip**压缩发送的数据，
+~~换个好点的带宽~~。
+
+* 有序消费消息
+
+一个Topic一个分区；指定key值，把同类型消息发送到同一分区，同一分区内消费有序。
+
+* 消息重复消费
+
+主流的Mq都有这个问题，无法避免，所以一般只能控制消费者处理消息时必须是**幂等**操作。
+
+## Reference
+[SpringBoot Apache Kafka Support](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-messaging.html#boot-features-kafka)
+
+**(推荐)**[kafka详细介绍](https://blog.csdn.net/qq_19917081/article/details/70739212)
+
+**(推荐)**[Kafka官网](http://kafka.apachecn.org/)
+
+[记一次kafka数据丢失问题的排查](https://blog.csdn.net/qq_33160722/article/details/52903380)
